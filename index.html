@@ -4,26 +4,26 @@
 <html>
 	<head>
 		<title>This World Is Bullshit</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script src="okhover.min.js"></script>
-		<script>
-		$.getJSON( "https://api.github.com/repos/caseyg/bullshit.systems/contents/", function( data ) {
-		  var items = [];
-		  $.each( data, function( i, file ) {
-		    items.push( "<li data-okimage='"+file.download_url+"'><a href='" + file.download_url + "'>" + file.name + "</a></li>" );
-		  });
-		 
-		  $( "<ul/>", {
-		    "class": "my-new-list",
-		    html: items.join( "" )
-		  }).appendTo( "body" );
-		});
-		$(function() {
-		    $('li').okhover();
-		}); 
-		</script>
 	</head>
 	<body>
-	<ul></ul>
 	</body>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+		<script type="text/javascript" src="okhover.min.js"></script>
+		<script>
+			$.getJSON( "https://api.github.com/repos/caseyg/bullshit.systems/contents/", function( data ) {
+				var items = [];
+				$.each( data, function( i, file ) {
+					if(file.name.indexOf('gif') > -1) {
+						items.push( "<li data-okimage='http://bullshit.systems/"+file.name+"'><a href='http://bullshit.systems/" + file.name + "'>" + file.name + "</a></li>" );
+					}
+				});
+
+				$( "<ul/>", {
+					html: items.join( "" )
+				}).appendTo( "body" );
+
+				$("li").okhover()
+
+			});
+		</script>
 </html>
