@@ -6,6 +6,7 @@
 		<title>This World Is Bullshit</title>
 	</head>
 	<body>
+		<p><small>Bullshit<em>Systems</em> is a subsidiary of <a href="http://caseyagollan.com">C.A.G.</a> :-)</small></p>
 	</body>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 		<script type="text/javascript" src="okhover.min.js"></script>
@@ -20,7 +21,7 @@
 
 				$( "<ul/>", {
 					html: items.join( "" )
-				}).appendTo( "body" );
+				}).prependTo( "body" );
 
 				$("li").okhover()
 
